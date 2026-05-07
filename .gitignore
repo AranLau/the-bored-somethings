@@ -1,0 +1,21 @@
+# Machine-specific symlinks in .claude/skills/ (point to Cherry Studio AppData)
+# These are local-only; on other machines, cp skill_*.md to Cherry Studio manually.
+.claude/skills/deepseek-dual-router
+.claude/skills/find-skills
+.claude/skills/skill-creator
+.claude/skills/prometheus-bourdieu
+.claude/skills/prometheus-cogitate
+.claude/skills/prometheus-daily-brief
+.claude/skills/prometheus-element
+.claude/skills/prometheus-idealism
+.claude/skills/prometheus-qiushu
+.claude/skills/prometheus-repair-self
+.claude/skills/prometheus-sanshen
+
+# Runtime logs (generated, not source)
+logs/
+daily-archive/
+
+# OS
+.DS_Store
+Thumbs.db
