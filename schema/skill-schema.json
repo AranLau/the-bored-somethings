@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/anomalyco/prometheus-0/skill-schema.json",
+  "title": "Prometheus-0 Skill Definition",
+  "description": "Formal contract for Prometheus-0 skill frontmatter in .claude/skills/skill_*.md. Every skill must conform to this schema. The body below the frontmatter is freeform Markdown and not schema-constrained.",
+  "type": "object",
+  "required": ["name", "priority", "description", "trigger"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Skill identifier. Used as the Cherry Studio skill name. Must be unique across all skills."
+    },
+    "priority": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Routing priority. Higher values win when multiple skills match the same input. Values should be unique per skill type, but sub-agent lenses may share a priority tier."
+    },
+    "description": {
+      "type": "string",
+      "minLength": 10,
+      "description": "Brief description of the skill's role, behavior, and trigger context. Displayed in Cherry Studio and used for LLM routing."
+    },
+    "trigger": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Comma-separated trigger keywords. Case-insensitive matching. Each keyword should be concise (typically 2-6 characters for Chinese)."
+    }
+  },
+  "additionalProperties": false
+}
